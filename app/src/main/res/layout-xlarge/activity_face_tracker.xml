@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.bizarrecoding.mustachecam.FaceTrackerActivity"
+    android:minWidth="60dp"
+    android:minHeight="100dp"
+    android:id="@+id/root">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.bizarrecoding.mustachecam.CameraSourcePreview
+            android:id="@+id/preview"
+            android:layout_width="wrap_content"
+            android:layout_height="770dp"
+            android:layout_gravity="center_horizontal">
+            <com.bizarrecoding.mustachecam.GraphicOverlay
+                android:id="@+id/faceOverlay"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:foregroundGravity="center_horizontal" />
+
+        </com.bizarrecoding.mustachecam.CameraSourcePreview>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_gravity="bottom"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true">
+
+        <ToggleButton
+            android:layout_width="150dp"
+            android:layout_height="70dp"
+            android:text="New ToggleButton"
+            android:id="@+id/toggleButton"
+            android:background="@drawable/photobutton"
+            android:textColor="#FFFFFF"
+            android:textSize="28sp"
+            android:layout_gravity="center|left"
+            android:textOff="Front"
+            android:textOn="Back"
+            android:layout_marginLeft="0dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            android:layout_width="230dp"
+            android:layout_height="70dp"
+            android:id="@+id/button"
+            android:background="@drawable/photobutton"
+            android:text="Take Photo"
+            android:textColor="#FFFFFF"
+            android:textSize="28sp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="157dp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+
+        <FrameLayout
+            android:layout_width="150dp"
+            android:layout_height="120dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:background="#9bcccccc"
+            android:id="@+id/takenFrame"></FrameLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>
+
