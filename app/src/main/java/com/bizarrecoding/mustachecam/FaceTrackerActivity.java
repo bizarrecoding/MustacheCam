@@ -6,11 +6,8 @@ import android.content.pm.ActivityInfo;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Matrix;
-import android.media.MediaScannerConnection;
 import android.net.Uri;
 import android.os.Environment;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -19,12 +16,14 @@ import android.widget.CompoundButton;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ToggleButton;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.vision.CameraSource;
 import com.google.android.gms.vision.MultiProcessor;
 import com.google.android.gms.vision.Tracker;
 import com.google.android.gms.vision.face.Face;
 import com.google.android.gms.vision.face.FaceDetector;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -52,9 +51,8 @@ public class FaceTrackerActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_face_tracker);
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
-        isFront=true;
+        isFront = true;
         parentLayout = findViewById(R.id.root);
         thumbnail = (FrameLayout) findViewById(R.id.takenFrame);
         mPreview = (CameraSourcePreview) findViewById(R.id.preview);
@@ -87,9 +85,9 @@ public class FaceTrackerActivity extends AppCompatActivity {
             public void onClick(View v) {
                 mCameraSource.takePicture(null, new PhotoHandler(getApplicationContext(), mCameraSource));
                 try {
-                    sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.parse("file://" + Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES)+File.separator+"Mustache")));
-                }catch (Exception ex){
-                    Log.e("Intent Failed",ex.getMessage());
+                    sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.parse("file://" + Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES) + File.separator + "Mustache")));
+                } catch (Exception ex) {
+                    Log.e("Intent Failed", ex.getMessage());
                 }
             }
         });
