@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Mustache Cam</string>
+    <string name="take_photo">Take Photo</string>
+    <string name="front">Front</string>
+    <string name="back">Back</string>
+    <string name="preview_descriptor">taken image preview</string>
 </resources>
